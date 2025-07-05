@@ -1,0 +1,1 @@
+# user-segmentation-vk-practice
