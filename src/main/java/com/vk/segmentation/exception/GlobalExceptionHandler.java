@@ -20,8 +20,7 @@ public class GlobalExceptionHandler {
             this.message = message;
             this.path = request.getDescription(false).replace("uri=", "");
         }
-
-        // Getters
+        
         public LocalDateTime getTimestamp() { return timestamp; }
         public String getMessage() { return message; }
         public String getPath() { return path; }

@@ -9,7 +9,7 @@ import com.vk.segmentation.exception.BadParamsException;
 import com.vk.segmentation.service.DistributionService;
 
 @RestController
-@RequestMapping("/Distribution")
+@RequestMapping("/distribution")
 public class DistributionController {
 
 	private final DistributionService distributionService;
