@@ -31,4 +31,10 @@ public class GlobalExceptionHandler {
         ErrorResponse error = new ErrorResponse(ex.getMessage(), request);
         return new ResponseEntity<>(error, HttpStatus.NOT_FOUND);
     }
+
+    @ExceptionHandler(BadParamsException.class)
+    public ResponseEntity<ErrorResponse> handleResourceNotFound(BadParamsException ex, WebRequest request) {
+        ErrorResponse error = new ErrorResponse(ex.getMessage(), request);
+        return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
+    }
 }
