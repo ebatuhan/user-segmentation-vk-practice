@@ -1,5 +1,6 @@
 package com.vk.segmentation.dto;
 
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -10,5 +11,5 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class VkSegmentPostDto {
- 	private String segmentName;   
+ 	private String segmentName; 
 }

@@ -13,4 +13,5 @@ public interface VkSegmentService {
 	VkSegmentDto findBySegmentName(String segmentName);
 	boolean deleteSegmentById(Long id);
 	boolean deleteSegmentByName(String name);
+
 }

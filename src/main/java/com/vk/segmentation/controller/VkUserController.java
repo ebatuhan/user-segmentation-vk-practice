@@ -11,8 +11,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.vk.segmentation.dto.VkSegmentPostDto;
 import com.vk.segmentation.dto.VkUserDto;
 import com.vk.segmentation.dto.VkUserPostDto;
+import com.vk.segmentation.dto.VkUserVkSegmentDto;
 import com.vk.segmentation.service.VkUserService;
 
 @RestController
@@ -47,6 +49,21 @@ public class VkUserController {
 	@DeleteMapping("/{id}")
 	public boolean deleteVkUser(@PathVariable Long id){
 		return vkUserService.deleteUser(id);
+	}
+
+	@GetMapping("/{id}/segments")
+	public VkUserVkSegmentDto findAllSegmentsOfVkUserById(@PathVariable Long id){
+		return vkUserService.findAllSegmentsOfVkUserById(id);
+	}
+
+	@PutMapping("/{id}/segments")
+	public VkUserVkSegmentDto addSegmentToVkUser(@PathVariable Long id, @RequestBody VkSegmentPostDto vkSegmentPostDto){
+		return vkUserService.addSegmentToVkUser(id, vkSegmentPostDto);
+	}
+
+	@DeleteMapping("/{id}/segments")
+	public boolean removeSegmentFromVkUser(Long id, VkSegmentPostDto vkSegmentPostDto){
+		return vkUserService.removeSegmentFromVkUser(id, vkSegmentPostDto);
 	}
 }
     
